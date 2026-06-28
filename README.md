@@ -4,7 +4,7 @@
 
 ![OS](https://img.shields.io/badge/OS-CachyOS-1793D1?logo=arch-linux)
 ![WM](https://img.shields.io/badge/WM-Hyprland-58A6FF?logo=wayland)
-![Shell](https://img.shields.io/badge/Shell-ZSH-F15A24?logo=zsh)
+![Shell](https://img.shields.io/badge/Shell-Noctalia-8B5CF6?logo=wayland)
 ![Terminal](https://img.shields.io/badge/Terminal-Konsole-1D99F3?logo=kde)
 ---
 
@@ -17,7 +17,7 @@ This is my personal dotfiles repository featuring a clean, minimal Hyprland setu
 - **Window Manager:** Hyprland (Wayland compositor)
 - **Desktop Shell:** Noctalia v5 (bar, panels, notifications, lockscreen)
 - **Terminal:** Konsole
-- **Shell:** ZSH
+- **Shell:** Noctalia + ZSH
 - **Browser:** Helium Browser
 - **File Manager:** Dolphin
 - **Editor:** Kate,vim
@@ -58,12 +58,27 @@ paru -S hyprshot helium-browser-bin
 git clone https://github.com/Fami-PL/hyprland-dots.git
 cd hyprland-dots
 
-# Copy configs
-cp -r hypr ~/.config/
-cp -r noctalia ~/.config/
-cp konsole/konsolerc ~/.config/
-cp konsole/dots.profile ~/.local/share/konsole/
-cp zsh/.zshrc ~/
+# Create config directories
+mkdir -p ~/.config/hypr ~/.config/noctalia ~/.config/fastfetch
+
+# Copy Hyprland config
+cp hyprland.conf ~/.config/hypr/
+cp hyprland-gui.conf ~/.config/hypr/
+
+# Copy Noctalia config
+cp noctalia.toml ~/.config/noctalia/config.toml
+cp noctalia-colors.json ~/.config/noctalia/colors.json
+cp noctalia-settings.json ~/.config/noctalia/settings.json
+cp noctalia-plugins.json ~/.config/noctalia/plugins.json
+
+# Copy Fastfetch config
+cp -r fastfetch ~/.config/
+
+# Copy Konsole config
+cp konsolerc ~/.config/
+
+# Copy ZSH config
+cp zshrc ~/.zshrc
 
 # Reload Hyprland
 hyprctl reload
@@ -71,11 +86,9 @@ hyprctl reload
 
 ### Noctalia Config
 
-Make sure Noctalia v5 config exists:
+Reload Noctalia config:
 
 ```bash
-mkdir -p ~/.config/noctalia
-cp noctalia/config.toml ~/.config/noctalia/
 noctalia msg config-reload
 ```
 
@@ -126,7 +139,7 @@ noctalia msg config-reload
 
 ### Bar Appearance
 
-Edit `~/.config/noctalia/config.toml`:
+Edit `~/.config/noctalia/config.toml` (sourced from `noctalia.toml`):
 
 ```toml
 [bar.main]
@@ -232,15 +245,17 @@ hyprctl reload
 
 ```
 .
-├── hypr/
-│   └── hyprland.conf          # Hyprland main config
-├── noctalia/
-│   └── config.toml            # Noctalia v5 config
-├── konsole/
-│   ├── konsolerc              # Konsole main config
-│   └── dots.profile           # Konsole profile
-├── zsh/
-│   └── .zshrc                 # ZSH shell config
+├── hyprland.conf              # Hyprland main config
+├── hyprland-gui.conf          # Hyprland GUI settings (HyprMod)
+├── noctalia.toml              # Noctalia v5 config (bar, panels)
+├── noctalia-colors.json       # Noctalia color scheme
+├── noctalia-settings.json     # Noctalia panel settings
+├── noctalia-plugins.json      # Noctalia plugins config
+├── fastfetch/
+│   └── config.jsonc           # Fastfetch config
+├── konsolerc                  # Konsole config
+├── zshrc                      # ZSH shell config
+├── wallpaper/                 # Wallpapers
 └── README.md
 ```
 
