@@ -104,11 +104,17 @@ copy_configs() {
   cp -r "$DOTFILES_DIR/fastfetch/config.jsonc" "$HOME/.config/fastfetch/"
   cp "$DOTFILES_DIR/konsolerc" "$HOME/.config/"
   cp "$DOTFILES_DIR/dots.profile" "$HOME/.local/share/konsole/"
+  cp "$DOTFILES_DIR/dots-V2.profile" "$HOME/.local/share/konsole/"
+  cp "$DOTFILES_DIR/Dots.colorscheme" "$HOME/.local/share/konsole/"
   cp "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
 
   mkdir -p "$HOME/Pictures/wallpaper"
   cp "$DOTFILES_DIR/bog-wallpaper.png" "$HOME/Pictures/wallpaper/" 2>/dev/null || true
   noctalia msg wallpaper-set "$HOME/Pictures/wallpaper/bog-wallpaper.png" 2>/dev/null || true
+
+  mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
+  cp "$DOTFILES_DIR/gtk/gtk3-settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+  cp "$DOTFILES_DIR/gtk/gtk4-settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
 
   ok "Configs copied"
 }

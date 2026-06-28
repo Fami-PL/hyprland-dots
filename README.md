@@ -91,9 +91,14 @@ cp config.toml ~/.config/noctalia/
 # Copy Fastfetch config
 cp -r fastfetch ~/.config/
 
-# Copy Konsole config + profile
+# Copy GTK settings (Adwaita-dark)
+mkdir -p ~/.config/gtk-3.0 ~/.config/gtk-4.0
+cp gtk/gtk3-settings.ini ~/.config/gtk-3.0/settings.ini
+cp gtk/gtk4-settings.ini ~/.config/gtk-4.0/settings.ini
+
+# Copy Konsole config + profiles
 cp konsolerc ~/.config/
-cp dots.profile ~/.local/share/konsole/
+cp dots.profile dots-V2.profile ~/.local/share/konsole/
 
 # Copy ZSH config
 cp zshrc ~/.zshrc
@@ -267,9 +272,13 @@ hyprctl reload
 ├── hyprland-gui.conf          # Hyprland GUI settings (HyprMod)
 ├── fastfetch/
 │   └── config.jsonc           # Fastfetch config
+├── gtk/
+│   ├── gtk3-settings.ini      # GTK3 settings (Adwaita-dark)
+│   └── gtk4-settings.ini      # GTK4 settings (dark mode)
 ├── config.toml                # Noctalia v5 config (bar, widgets, theme)
-├── konsolerc                  # Konsole config
-├── dots.profile               # Konsole profile (ZSH)
+├── konsolerc                  # Konsole config (default: dots-V2)
+├── dots.profile               # Konsole profile (v1)
+├── dots-V2.profile            # Konsole profile (v2 - default)
 ├── zshrc                      # ZSH shell config
 ├── install.sh                 # Installation script
 ├── uninstall.sh               # Uninstallation script

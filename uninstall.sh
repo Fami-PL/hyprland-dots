@@ -23,6 +23,10 @@ FILES_TO_REMOVE=(
   "$HOME/.config/fastfetch/config.jsonc"
   "$HOME/.config/konsolerc"
   "$HOME/.local/share/konsole/dots.profile"
+  "$HOME/.local/share/konsole/dots-V2.profile"
+  "$HOME/.local/share/konsole/Dots.colorscheme"
+  "$HOME/.config/gtk-3.0/settings.ini"
+  "$HOME/.config/gtk-4.0/settings.ini"
   "$HOME/.zshrc"
 )
 
