@@ -111,7 +111,6 @@ copy_configs() {
 
   mkdir -p "$HOME/Pictures/wallpaper"
   cp "$DOTFILES_DIR/bog-wallpaper.png" "$HOME/Pictures/wallpaper/" 2>/dev/null || true
-  noctalia msg wallpaper-set "$HOME/Pictures/wallpaper/bog-wallpaper.png" 2>/dev/null || true
 
   mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
   cp "$DOTFILES_DIR/gtk/gtk3-settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
@@ -154,6 +153,13 @@ reload_noctalia() {
   noctalia msg config-reload 2>/dev/null && ok "Noctalia reloaded" || warn "Noctalia not running, will load on next start"
 }
 
+set_default_wallpaper() {
+  local wp="$HOME/Pictures/wallpaper/bog-wallpaper.png"
+  if [[ -f "$wp" ]] && command -v noctalia &>/dev/null; then
+    noctalia msg wallpaper-set "$wp" 2>/dev/null && ok "Default wallpaper set" || warn "Could not set wallpaper via IPC"
+  fi
+}
+
 manual_install() {
   echo ""
   info "=== Manual Installation ==="
@@ -182,6 +188,7 @@ manual_install() {
     set_zsh_default
     reload_hyprland
     reload_noctalia
+    set_default_wallpaper
     ok "Manual setup complete!"
   else
     info "Skipping. You can run '$DOTFILES_DIR/install.sh --auto' later."
@@ -202,6 +209,7 @@ auto_install() {
   set_zsh_default
   reload_hyprland
   reload_noctalia
+  set_default_wallpaper
 
   echo ""
   ok "=== Installation complete! ==="
