@@ -14,6 +14,25 @@ err()   { echo -e "${RED}[ERR]${NC} $1"; }
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+detect_gpu() {
+  if lspci -nn 2>/dev/null | grep -qi "VGA.*NVIDIA\|3D.*NVIDIA"; then
+    echo "nvidia"
+  elif lspci -nn 2>/dev/null | grep -qi "VGA.*AMD\|3D.*AMD\|VGA.*Radeon\|3D.*Radeon"; then
+    echo "amd"
+  elif lspci -nn 2>/dev/null | grep -qi "VGA.*Intel\|3D.*Intel"; then
+    echo "intel"
+  else
+    echo "unknown"
+  fi
+}
+
+strip_nvidia_lines() {
+  local src="$1"
+  local dest="$2"
+  sed '/^# NVIDIA$/,/^env = WLR_DRM_NO_ATOMIC,1$/d' "$src" > "$dest"
+  info "Stripped NVIDIA-specific env vars from hyprland.conf"
+}
+
 OFFICIAL_PACKAGES=(
   hyprland konsole dolphin vim kate
   brightnessctl wireplumber fastfetch
@@ -69,7 +88,15 @@ copy_configs() {
   mkdir -p "$HOME/.config/noctalia"
   mkdir -p "$HOME/.config/fastfetch"
 
-  cp "$DOTFILES_DIR/hyprland.conf" "$HOME/.config/hypr/"
+  local gpu
+  gpu=$(detect_gpu)
+  info "Detected GPU: $gpu"
+
+  if [[ "$gpu" == "nvidia" ]]; then
+    cp "$DOTFILES_DIR/hyprland.conf" "$HOME/.config/hypr/"
+  else
+    strip_nvidia_lines "$DOTFILES_DIR/hyprland.conf" "$HOME/.config/hypr/hyprland.conf"
+  fi
   cp "$DOTFILES_DIR/hyprland-gui.conf" "$HOME/.config/hypr/"
   cp "$DOTFILES_DIR/noctalia.toml" "$HOME/.config/noctalia/config.toml"
   cp "$DOTFILES_DIR/noctalia-colors.json" "$HOME/.config/noctalia/colors.json"
