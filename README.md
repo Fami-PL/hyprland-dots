@@ -37,7 +37,27 @@ This is my personal dotfiles repository featuring a clean, minimal Hyprland setu
 
 ## 📦 Installation
 
-### Prerequisites
+You can use the install script or do it manually.
+
+### Option 1 — Automatic (install script)
+
+Installs all packages (official + AUR) and copies configs:
+
+```bash
+git clone https://github.com/Fami-PL/hyprland-dots.git
+cd hyprland-dots
+chmod +x install.sh
+
+# Full automatic install
+./install.sh --auto
+
+# Or step-by-step manual mode
+./install.sh --manual
+```
+
+### Option 2 — Manual
+
+#### Prerequisites
 
 ```bash
 # Install Hyprland and core dependencies
@@ -51,7 +71,7 @@ sudo pacman -S brightnessctl wireplumber
 paru -S hyprshot helium-browser-bin
 ```
 
-### Clone & Apply
+#### Clone & Apply
 
 ```bash
 # Clone the repository
@@ -84,7 +104,7 @@ cp zshrc ~/.zshrc
 hyprctl reload
 ```
 
-### Noctalia Config
+#### Noctalia Config
 
 Reload Noctalia config:
 
