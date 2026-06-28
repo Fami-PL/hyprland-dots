@@ -32,9 +32,6 @@ start = [ "workspaces", "media" ]
 center = [ "clock", "weather" ]
 end = [ "tray", "notifications", "wallpaper", "wallhaven", "clipboard", "bluetooth", "volume", "session" ]
 
-[widget.workspaces]
-type = "workspaces"
-
 [widget.media]
 type = "media"
 art_size = 16.0
