@@ -1,0 +1,15 @@
+[Desktop Entry]
+DefaultProfile=dots.profile
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+ToolBarsMovable=Enabled
+
+[Notification Messages]
+CloseAllTabs=true
+ShowPasteHugeTextWarning=false
+
+[UiSettings]
+ColorScheme=BreezeDark
