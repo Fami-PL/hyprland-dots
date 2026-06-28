@@ -205,7 +205,15 @@ auto_install() {
 
   echo ""
   ok "=== Installation complete! ==="
-  info "Reboot or re-login for all changes to take effect."
+
+  local choice
+  read -rp "Reboot now? [y/N] " choice
+  if [[ "$choice" =~ ^[Yy]$ ]]; then
+    info "Rebooting..."
+    sudo reboot
+  else
+    info "Reboot later for all changes to take effect."
+  fi
 }
 
 usage() {
