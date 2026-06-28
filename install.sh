@@ -106,6 +106,10 @@ copy_configs() {
   cp "$DOTFILES_DIR/dots.profile" "$HOME/.local/share/konsole/"
   cp "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
 
+  mkdir -p "$HOME/Pictures/wallpaper"
+  cp "$DOTFILES_DIR/bog-wallpaper.png" "$HOME/Pictures/wallpaper/" 2>/dev/null || true
+  noctalia msg wallpaper-set "$HOME/Pictures/wallpaper/bog-wallpaper.png" 2>/dev/null || true
+
   ok "Configs copied"
 }
 
