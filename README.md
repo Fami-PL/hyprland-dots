@@ -17,7 +17,7 @@ This is my personal dotfiles repository featuring a clean, minimal Hyprland setu
 - **Window Manager:** Hyprland (Wayland compositor)
 - **Desktop Shell:** Noctalia v5 (bar, panels, notifications, lockscreen)
 - **Terminal:** Konsole
-- **Shell:** Noctalia + ZSH
+- **Shell:** ZSH
 - **Browser:** Helium Browser
 - **File Manager:** Dolphin
 - **Editor:** Kate,vim
@@ -274,6 +274,7 @@ hyprctl reload
 ├── fastfetch/
 │   └── config.jsonc           # Fastfetch config
 ├── konsolerc                  # Konsole config
+├── dots.profile               # Konsole profile (ZSH)
 ├── zshrc                      # ZSH shell config
 ├── install.sh                 # Installation script
 ├── uninstall.sh               # Uninstallation script

@@ -24,7 +24,7 @@
         "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
-        "terminalCommand": "alacritty -e",
+        "terminalCommand": "konsole -e",
         "viewMode": "list"
     },
     "audio": {
@@ -372,7 +372,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/fami/Pictures/Avatar.png",
+        "avatarImage": "",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -658,7 +658,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/fami/Pictures/wallpaper",
+        "directory": "~/.config/noctalia/wallpaper",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
