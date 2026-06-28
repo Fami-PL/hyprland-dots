@@ -62,7 +62,8 @@ cd hyprland-dots
 # Copy configs
 cp -r hypr ~/.config/
 cp -r noctalia ~/.config/
-cp -r ghostty ~/.config/ 2>/dev/null || true
+cp konsole/konsolerc ~/.config/
+cp konsole/dots.profile ~/.local/share/konsole/
 cp zsh/.zshrc ~/
 
 # Reload Hyprland
