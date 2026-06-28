@@ -275,8 +275,24 @@ hyprctl reload
 │   └── config.jsonc           # Fastfetch config
 ├── konsolerc                  # Konsole config
 ├── zshrc                      # ZSH shell config
+├── install.sh                 # Installation script
+├── uninstall.sh               # Uninstallation script
 ├── wallpaper/                 # Wallpapers
 └── README.md
+```
+
+---
+
+## 🗑️ Uninstall
+
+Remove configs (with backup) or full uninstall:
+
+```bash
+# Remove only configs (backed up to ~/dotfiles-backup-*)
+./uninstall.sh --configs-only
+
+# Remove configs + optionally remove packages
+./uninstall.sh --full
 ```
 
 ---
@@ -296,4 +312,4 @@ MIT License — feel free to use, modify, and share. See [LICENSE](./LICENSE) fo
 
 ---
 
-> **Note:** This is a personal configuration. For laptops with Intel/AMD graphics, remove NVIDIA environment variables from `hyprland.conf`.
+> **Note:** This is a personal configuration. The install script auto-detects your GPU and strips NVIDIA env vars on Intel/AMD systems.
