@@ -19,10 +19,10 @@ FILES_TO_REMOVE=(
   "$HOME/.config/hypr/hyprland-gui.conf"
   "$HOME/.config/noctalia/config.toml"
   "$HOME/.config/noctalia/colors.json"
-  "$HOME/.config/noctalia/settings.json"
   "$HOME/.config/noctalia/plugins.json"
   "$HOME/.config/fastfetch/config.jsonc"
   "$HOME/.config/konsolerc"
+  "$HOME/.local/share/konsole/dots.profile"
   "$HOME/.zshrc"
 )
 

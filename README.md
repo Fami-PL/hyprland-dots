@@ -79,23 +79,21 @@ git clone https://github.com/Fami-PL/hyprland-dots.git
 cd hyprland-dots
 
 # Create config directories
-mkdir -p ~/.config/hypr ~/.config/noctalia ~/.config/fastfetch
+mkdir -p ~/.config/hypr ~/.config/noctalia ~/.config/fastfetch ~/.local/share/konsole
 
 # Copy Hyprland config
 cp hyprland.conf ~/.config/hypr/
 cp hyprland-gui.conf ~/.config/hypr/
 
-# Copy Noctalia config
-cp noctalia.toml ~/.config/noctalia/config.toml
-cp noctalia-colors.json ~/.config/noctalia/colors.json
-cp noctalia-settings.json ~/.config/noctalia/settings.json
-cp noctalia-plugins.json ~/.config/noctalia/plugins.json
+# Copy Noctalia v5 config (TOML)
+cp config.toml ~/.config/noctalia/
 
 # Copy Fastfetch config
 cp -r fastfetch ~/.config/
 
-# Copy Konsole config
+# Copy Konsole config + profile
 cp konsolerc ~/.config/
+cp dots.profile ~/.local/share/konsole/
 
 # Copy ZSH config
 cp zshrc ~/.zshrc
@@ -104,9 +102,9 @@ cp zshrc ~/.zshrc
 hyprctl reload
 ```
 
-#### Noctalia Config
+#### Noctalia Config (v5)
 
-Reload Noctalia config:
+Noctalia v5 uses TOML config. Just copy `config.toml` and reload:
 
 ```bash
 noctalia msg config-reload
@@ -159,7 +157,7 @@ noctalia msg config-reload
 
 ### Bar Appearance
 
-Edit `~/.config/noctalia/config.toml` (sourced from `noctalia.toml`):
+Edit `~/.config/noctalia/config.toml`:
 
 ```toml
 [bar.main]
@@ -267,12 +265,9 @@ hyprctl reload
 .
 ├── hyprland.conf              # Hyprland main config
 ├── hyprland-gui.conf          # Hyprland GUI settings (HyprMod)
-├── noctalia.toml              # Noctalia v5 config (bar, panels)
-├── noctalia-colors.json       # Noctalia color scheme
-├── noctalia-settings.json     # Noctalia panel settings
-├── noctalia-plugins.json      # Noctalia plugins config
 ├── fastfetch/
 │   └── config.jsonc           # Fastfetch config
+├── config.toml                # Noctalia v5 config (bar, widgets, theme)
 ├── konsolerc                  # Konsole config
 ├── dots.profile               # Konsole profile (ZSH)
 ├── zshrc                      # ZSH shell config

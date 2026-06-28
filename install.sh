@@ -81,15 +81,6 @@ install_aur() {
   ok "AUR packages installed"
 }
 
-fix_noctalia_paths() {
-  local settings="$HOME/.config/noctalia/settings.json"
-  if [[ -f "$settings" ]]; then
-    sed -i "s|\"avatarImage\": \".*\"|\"avatarImage\": \"\"|" "$settings"
-    sed -i "s|\"directory\": \".*\"|\"directory\": \"$HOME/Pictures/wallpaper\"|" "$settings"
-    ok "Fixed Noctalia settings paths"
-  fi
-}
-
 copy_configs() {
   info "Copying configs..."
 
@@ -108,16 +99,13 @@ copy_configs() {
     strip_nvidia_lines "$DOTFILES_DIR/hyprland.conf" "$HOME/.config/hypr/hyprland.conf"
   fi
   cp "$DOTFILES_DIR/hyprland-gui.conf" "$HOME/.config/hypr/"
-  cp "$DOTFILES_DIR/noctalia.toml" "$HOME/.config/noctalia/config.toml"
-  cp "$DOTFILES_DIR/noctalia-colors.json" "$HOME/.config/noctalia/colors.json"
-  cp "$DOTFILES_DIR/noctalia-settings.json" "$HOME/.config/noctalia/settings.json"
-  cp "$DOTFILES_DIR/noctalia-plugins.json" "$HOME/.config/noctalia/plugins.json"
+  cp "$DOTFILES_DIR/config.toml" "$HOME/.config/noctalia/config.toml"
+  cp "$DOTFILES_DIR/noctalia-colors.json" "$HOME/.config/noctalia/colors.json" 2>/dev/null || true
   cp -r "$DOTFILES_DIR/fastfetch/config.jsonc" "$HOME/.config/fastfetch/"
   cp "$DOTFILES_DIR/konsolerc" "$HOME/.config/"
   cp "$DOTFILES_DIR/dots.profile" "$HOME/.local/share/konsole/"
   cp "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
 
-  fix_noctalia_paths
   ok "Configs copied"
 }
 
@@ -143,24 +131,13 @@ reload_hyprland() {
 }
 
 reload_noctalia() {
-  if ! command -v noctalia &>/dev/null && ! command -v qs &>/dev/null; then
-    warn "Noctalia not found, skipping restart"
+  if ! command -v noctalia &>/dev/null; then
+    warn "Noctalia not found, skipping reload"
     return
   fi
 
-  info "Clearing Noctalia cache..."
-  rm -rf "$HOME/.cache/noctalia" 2>/dev/null
-
-  if pgrep -x qs &>/dev/null; then
-    info "Restarting Noctalia shell..."
-    killall qs 2>/dev/null
-    sleep 1
-    qs -p "$HOME/.config/noctalia/noctalia-shell" &>/dev/null &
-    disown
-    ok "Noctalia restarted"
-  else
-    info "Noctalia not running, will apply on next start"
-  fi
+  info "Reloading Noctalia config..."
+  noctalia msg config-reload 2>/dev/null && ok "Noctalia reloaded" || warn "Noctalia not running, will load on next start"
 }
 
 manual_install() {

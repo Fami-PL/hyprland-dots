@@ -1,0 +1,214 @@
+[theme]
+builtin = "Ayu"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
+
+[bar]
+order = [ "main" ]
+
+[bar.main]
+position = "top"
+layer = "top"
+auto_hide = false
+thickness = 34
+padding = 14
+radius = 12
+margin_ends = 5
+margin_edge = 5
+margin_opposite_edge = 0
+background_opacity = 0.7
+shadow = true
+capsule = false
+contact_shadow = false
+reserve_space = true
+show_on_workspace_switch = true
+widget_spacing = 9
+font_family = "Hack"
+font_weight = 350
+scale = 1.0
+
+start = [ "workspaces", "media" ]
+center = [ "clock", "weather" ]
+end = [ "tray", "notifications", "wallpaper", "wallhaven", "clipboard", "bluetooth", "volume", "session" ]
+
+[widget.workspaces]
+type = "workspaces"
+
+[widget.media]
+type = "media"
+art_size = 16.0
+max_length = 220.0
+min_length = 80.0
+title_scroll = "none"
+
+[widget.clock]
+type = "clock"
+scale = 1.15
+
+[widget.date]
+type = "clock"
+format = "{:%a %d %b}"
+
+[widget.weather]
+type = "weather"
+
+[widget.tray]
+type = "tray"
+
+[widget.notifications]
+type = "notifications"
+
+[widget.wallpaper]
+type = "wallpaper"
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.clipboard]
+type = "clipboard"
+
+[widget.bluetooth]
+type = "bluetooth"
+
+[widget.volume]
+type = "volume"
+device = "output"
+
+[widget.session]
+type = "session"
+
+[widget.launcher]
+type = "launcher"
+glyph = "apps"
+
+[widget.active_window]
+type = "active_window"
+icon_size = 14.0
+max_length = 260.0
+min_length = 80.0
+title_scroll = "none"
+
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_usage"
+
+[widget.ram]
+type = "sysmon"
+stat = "ram_used"
+
+[shell]
+avatar_path = ""
+clipboard_enabled = true
+font_family = "Fira Sans"
+time_format = "{:%H:%M}"
+date_format = "%A, %x"
+ui_scale = 1.0
+corner_radius_scale = 1.0
+
+[shell.animation]
+enabled = true
+speed = 1.0
+
+[shell.launcher]
+categories = true
+show_icons = true
+sort_by_usage = true
+
+[shell.shadow]
+alpha = 0.55
+direction = "down"
+
+[shell.panel]
+shadow = true
+transparency_mode = "solid"
+borders = true
+
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+directory = ""
+transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
+transition_duration = 1500.0
+
+[notification]
+background_opacity = 0.97
+position = "top_right"
+offset_x = 20
+offset_y = 8
+enable_daemon = true
+show_actions = true
+show_app_name = true
+layer = "top"
+
+[osd]
+enabled = true
+position = "top_center"
+background_opacity = 0.97
+offset_x = 20
+offset_y = 8
+
+[control_center]
+sidebar = "compact"
+width = 700
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[dock]
+enabled = false
+
+[plugins]
+enabled = [ "noctalia/wallhaven" ]
+
+[[plugins.source]]
+enabled = true
+name = "official"
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+auto_update = false
+
+[[plugins.source]]
+enabled = true
+name = "community"
+kind = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+auto_update = false
+
+[desktop_widgets]
+enabled = true
+schema_version = 2
+
+[lockscreen]
+enabled = true
+blur_intensity = 0.5
+tint_intensity = 0.3
+
+[backdrop]
+enabled = false
+blur_intensity = 0.5
+tint_intensity = 0.3
+
+[weather]
+enabled = true
+unit = "metric"
+refresh_minutes = 30
+effects = true
+
+[location]
+auto_locate = true
