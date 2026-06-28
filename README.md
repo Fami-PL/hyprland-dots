@@ -5,8 +5,7 @@
 ![OS](https://img.shields.io/badge/OS-CachyOS-1793D1?logo=arch-linux)
 ![WM](https://img.shields.io/badge/WM-Hyprland-58A6FF?logo=wayland)
 ![Shell](https://img.shields.io/badge/Shell-ZSH-F15A24?logo=zsh)
-![Terminal](https://img.shields.io/badge/Terminal-Ghostty-4E9A06)
-
+![Terminal](https://img.shields.io/badge/Terminal-Konsole-1D99F3?logo=kde)
 ---
 
 ## ✨ Overview
@@ -237,8 +236,9 @@ hyprctl reload
 │   └── hyprland.conf          # Hyprland main config
 ├── noctalia/
 │   └── config.toml            # Noctalia v5 config
-├── ghostty/
-│   └── config                 # Ghostty terminal config (optional)
+├── konsole/
+│   ├── konsolerc              # Konsole main config
+│   └── dots.profile           # Konsole profile
 ├── zsh/
 │   └── .zshrc                 # ZSH shell config
 └── README.md
@@ -251,6 +251,7 @@ hyprctl reload
 - [Hyprland](https://hyprland.org/) — Wayland compositor
 - [Noctalia](https://noctalia.dev/) — Desktop shell
 - [CachyOS](https://cachyos.org/) — Arch-based distro
+- [Konsole](https://konsole.kde.org/) — Terminal emulator
 
 ---
 
