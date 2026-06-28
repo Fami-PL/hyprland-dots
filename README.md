@@ -261,5 +261,4 @@ MIT License — feel free to use, modify, and share. See [LICENSE](./LICENSE) fo
 
 ---
 
-> **Note:** This is a personal configuration. Some paths, monitor names, and hardware-specific settings (NVIDIA) may need adjustment for your system.
-"""
+> **Note:** This is a personal configuration. For laptops with Intel/AMD graphics, remove NVIDIA environment variables from `hyprland.conf`.
