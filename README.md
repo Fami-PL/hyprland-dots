@@ -2,7 +2,7 @@
 
 > Personal CachyOS rice with Hyprland, Noctalia v5, and a touch of glassmorphism.
 
-![OS](https://img.shields.io/badge/OS-CachyOS-1793D1?logo=arch-linux)
+![OS](https://img.shields.io/badge/OS-CachyOS-1793D1?logo=linux)
 ![WM](https://img.shields.io/badge/WM-Hyprland-58A6FF?logo=wayland)
 ![Shell](https://img.shields.io/badge/Shell-Noctalia-8B5CF6?logo=wayland)
 ![Terminal](https://img.shields.io/badge/Terminal-Konsole-1D99F3?logo=kde)
