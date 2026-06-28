@@ -5,6 +5,7 @@ fi
 
 # 2. TERAZ NADPISUJEMY ŚCIEŻKĘ DO WTYCZEK (żeby brało z Twojego domowego folderu, a nie roota)
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 # 3. KONFIGURACJA CACHYOS I OH MY ZSH
 source /usr/share/cachyos-zsh-config/cachyos-config.zsh

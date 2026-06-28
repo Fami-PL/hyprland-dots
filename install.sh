@@ -37,6 +37,7 @@ OFFICIAL_PACKAGES=(
   hyprland konsole dolphin vim kate
   brightnessctl wireplumber fastfetch
   networkmanager xdotool qt6ct
+  adwaita-qt5 adwaita-qt6
 )
 
 AUR_PACKAGES=(
@@ -115,6 +116,9 @@ copy_configs() {
   mkdir -p "$HOME/.config/gtk-3.0" "$HOME/.config/gtk-4.0"
   cp "$DOTFILES_DIR/gtk/gtk3-settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
   cp "$DOTFILES_DIR/gtk/gtk4-settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
+
+  mkdir -p "$HOME/.config/qt6ct"
+  cp "$DOTFILES_DIR/qt/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 
   ok "Configs copied"
 }

@@ -27,6 +27,7 @@ FILES_TO_REMOVE=(
   "$HOME/.local/share/konsole/Dots.colorscheme"
   "$HOME/.config/gtk-3.0/settings.ini"
   "$HOME/.config/gtk-4.0/settings.ini"
+  "$HOME/.config/qt6ct/qt6ct.conf"
   "$HOME/.zshrc"
 )
 
