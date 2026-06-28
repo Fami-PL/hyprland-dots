@@ -1,0 +1,13 @@
+[theme]
+mode = "dark"
+
+[bar.main]
+position = "top"
+margin_ends = 5      # wcięcia z lewej i prawej - zmień na mniej jak chcesz węższy
+margin_edge = 5        # odstęp od góry ekranu - float effect
+margin_opposite_edge = 0
+radius = 12            # zaokrąglenia rogów
+padding = 14
+thickness = 34
+background_opacity = 0.7
+shadow = true
