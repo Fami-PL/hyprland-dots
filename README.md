@@ -30,7 +30,7 @@ This is my personal dotfiles repository featuring a clean, minimal Hyprland setu
 - **Floating bar** with rounded corners and subtle shadows
 - **Wallhaven plugin** for easy wallpaper browsing
 - **Hyprshot** integration for screenshots
--  GPU-optimized environment variables (NVIDIA on desktop, Intel/AMD on laptop)
+- **GPU-optimized** environment variables (NVIDIA on desktop, Intel/AMD on laptop)
 - **Media keys** support (volume, brightness, playback)
 
 ---
